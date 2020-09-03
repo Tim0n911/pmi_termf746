@@ -85,7 +85,7 @@
 #define BK_COLOR GUI_BLACK //GUI_DARKBLUE
 
 #undef  GUI_NUM_LAYERS
-#define GUI_NUM_LAYERS 1 //1
+#define GUI_NUM_LAYERS 2 //1
 
 #define COLOR_CONVERSION_0 GUICC_M8888I
 #define DISPLAY_DRIVER_0   GUIDRV_LIN_32
@@ -115,8 +115,8 @@
 #endif
 
 /* From SDRAM */
-#define LCD_LAYER0_FRAME_BUFFER  ((int)0xC0000000)
-#define LCD_LAYER1_FRAME_BUFFER  ((int)0xC0200000)
+#define LCD_LAYER0_FRAME_BUFFER  ((int)0xC0200000)
+#define LCD_LAYER1_FRAME_BUFFER  ((int)0xC0400000)
 
 /**
 * @}
@@ -960,7 +960,7 @@ static void CUSTOM_DrawBitmap32bpp(int LayerIndex, int x, int y, U8 const * p, i
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 
 
-#if 0
+#if 0 // old configuration
 void HAL_LTDC_MspInit(LTDC_HandleTypeDef *hltdc)
 {  
   GPIO_InitTypeDef gpio_init_structure;
