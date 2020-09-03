@@ -1,0 +1,9 @@
+pmi_psc_term\guiconf.o: ..\STemWin\Target\GUIConf.c
+pmi_psc_term\guiconf.o: ..\STemWin\inc\GUI.h
+pmi_psc_term\guiconf.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+pmi_psc_term\guiconf.o: ..\STemWin\inc\GUI_ConfDefaults.h
+pmi_psc_term\guiconf.o: ..\STemWin\Config\GUIConf.h
+pmi_psc_term\guiconf.o: ..\STemWin\inc\GUI_Type.h
+pmi_psc_term\guiconf.o: ..\STemWin\inc\LCD.h
+pmi_psc_term\guiconf.o: ..\STemWin\inc\Global.h
+pmi_psc_term\guiconf.o: ..\STemWin\inc\GUI_Version.h
