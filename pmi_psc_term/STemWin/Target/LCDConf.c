@@ -115,8 +115,8 @@
 #endif
 
 /* From SDRAM */
-#define LCD_LAYER0_FRAME_BUFFER  ((int)0xC0200000)
-#define LCD_LAYER1_FRAME_BUFFER  ((int)0xC0400000)
+#define LCD_LAYER0_FRAME_BUFFER  ((int)0xC0000000)
+#define LCD_LAYER1_FRAME_BUFFER  ((int)0xC0200000)
 
 /**
 * @}
@@ -257,7 +257,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef *hltdc)
   /* PLLLCDCLK = PLLSAI_VCO Output/PLLSAIR = 429/5 = 85 Mhz */
   /* LTDC clock frequency = PLLLCDCLK / LTDC_PLLSAI_DIVR_2 = 85/4 = 21 Mhz */
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_LTDC;
-  PeriphClkInitStruct.PLLSAI.PLLSAIN = 56;
+  PeriphClkInitStruct.PLLSAI.PLLSAIN = 100;
   PeriphClkInitStruct.PLLSAI.PLLSAIR = 5;
 	PeriphClkInitStruct.PLLSAI.PLLSAIQ = 2;
   PeriphClkInitStruct.PLLSAI.PLLSAIP = RCC_PLLSAIP_DIV2;
@@ -739,14 +739,14 @@ static void LCD_LL_Init(void)
   hltdc.Init.VSPolarity = LTDC_VSPOLARITY_AL;
   hltdc.Init.DEPolarity = LTDC_DEPOLARITY_AL;
   hltdc.Init.PCPolarity = LTDC_PCPOLARITY_IPC;
-  hltdc.Init.HorizontalSync = 41; //31;
-  hltdc.Init.VerticalSync = 10; //7;
-  hltdc.Init.AccumulatedHBP = 87; //77;
-  hltdc.Init.AccumulatedVBP = 33; //30;
-  hltdc.Init.AccumulatedActiveW = 887; //877;
-  hltdc.Init.AccumulatedActiveH = 513; //510;
-  hltdc.Init.TotalWidth = 1097; //1087;
-  hltdc.Init.TotalHeigh = 535; //532;
+  hltdc.Init.HorizontalSync = 8; //31;
+  hltdc.Init.VerticalSync = 4; //7;
+  hltdc.Init.AccumulatedHBP = 14; //77;
+  hltdc.Init.AccumulatedVBP = 5; //30;
+  hltdc.Init.AccumulatedActiveW = 814; //877;
+  hltdc.Init.AccumulatedActiveH = 485; //510;
+  hltdc.Init.TotalWidth = 820; //1087;
+  hltdc.Init.TotalHeigh = 487; //532;
   hltdc.Init.Backcolor.Blue = 0;
   hltdc.Init.Backcolor.Green = 0;
   hltdc.Init.Backcolor.Red = 0;
@@ -960,7 +960,7 @@ static void CUSTOM_DrawBitmap32bpp(int LayerIndex, int x, int y, U8 const * p, i
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 
 
-#if 0 // old configuration
+#if 0
 void HAL_LTDC_MspInit(LTDC_HandleTypeDef *hltdc)
 {  
   GPIO_InitTypeDef gpio_init_structure;
